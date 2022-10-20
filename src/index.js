@@ -8,9 +8,9 @@ import { PORT } from "./config";
 connectDB();
 const server = http.createServer(app);
 
-const httpServer = server.listen(0, (err) => {
+const httpServer = server.listen(PORT, "0.0.0.0", (err) => {
   if (err) throw err;
-  console.log(`Listening on`);
+  console.log(`Listening on port ${PORT}`);
 });
 
 const io = new WebSocketServer(httpServer);
